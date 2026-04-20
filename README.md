@@ -1,5 +1,7 @@
 # Talk to Figma MCP · Effects Fork
 
+![Before vs After: flat button becomes a glassy 3D button with gradient, shadow, and blur](assets/before-after.png)
+
 > Fork of [**sonnylazuardi/cursor-talk-to-figma-mcp**](https://github.com/sonnylazuardi/cursor-talk-to-figma-mcp) with 3 new tools — **gradient fills, drop shadows, and layer blur** — for AI-native / glassmorphism UI design.
 
 ---
