@@ -2,6 +2,25 @@
 
 > Fork of [**sonnylazuardi/cursor-talk-to-figma-mcp**](https://github.com/sonnylazuardi/cursor-talk-to-figma-mcp) with 3 new tools — **gradient fills, drop shadows, and layer blur** — for AI-native / glassmorphism UI design.
 
+---
+
+## 中文简介
+
+这是 [**cursor-talk-to-figma-mcp**](https://github.com/sonnylazuardi/cursor-talk-to-figma-mcp) 的一个分支版本,在原版基础上新增了 3 个工具,让 AI 可以在 Figma 里绘制**渐变、阴影和模糊**这些现代 UI 常用的视觉效果。
+
+**为什么要做这个分支?** 原版 MCP 很适合画线框图,但只支持纯色填充和描边。当我尝试用 AI 还原一个 Hi-Fi 的 Figma 原型时,发现所有的 `box-shadow`、`radial-gradient(...)`、玻璃拟态效果都变成了扁平的方块。Figma 本身是支持这些效果的,只是原版 MCP 没有把对应的 API 暴露出来。所以我加了 3 个工具把这些能力补上。
+
+**新增的工具:**
+- **`set_gradient_fill`** — 给任意节点添加线性 / 径向 / 角度 / 菱形渐变,支持 2+ 色标,线性渐变支持角度控制
+- **`set_drop_shadow`** — 给节点添加投影或内阴影,可以设置偏移、模糊、扩散、RGBA 颜色,不会覆盖已有的模糊效果
+- **`set_layer_blur`** — 给节点添加图层模糊或背景模糊(毛玻璃效果),传入 `radius: 0` 可以移除,不会覆盖已有的阴影效果
+
+**适合什么人用?** 想让 AI 自动生成 Claude / Linear / Anthropic 官网那种带渐变 hero 背景、柔和阴影、玻璃拟态卡片的 Hi-Fi 设计稿的人。安装方法见下方 Install 章节。
+
+**与上游的关系:** 我已经向上游作者提了 Pull Request(见文末 "Relation to upstream" 一节)。如果上游合并了,这个分支就不再需要;如果没有合并,这个分支会继续维护。
+
+---
+
 ## Why this fork exists
 
 Upstream `cursor-talk-to-figma-mcp` is great for structural wireframes, but it only exposes **solid fills and strokes**. Modern AI product UIs (think Claude, Linear, Anthropic.com, most AI SaaS) lean heavily on:
@@ -107,7 +126,7 @@ The 3 new tools become visible in your AI agent's tool list after restart.
 
 This is a friendly fork. If the upstream maintainer accepts it, these 3 tools should live there. See `CHANGELOG.md` for the exact diff.
 
-Pull request welcome — if you're reading this and you're `@sonnylazuardi`, I'd be happy to upstream this.
+**Upstream PR:** [grab/cursor-talk-to-figma-mcp#170](https://github.com/grab/cursor-talk-to-figma-mcp/pull/170) — open, waiting for review. Once merged, this fork becomes unnecessary.
 
 ## Credits
 
